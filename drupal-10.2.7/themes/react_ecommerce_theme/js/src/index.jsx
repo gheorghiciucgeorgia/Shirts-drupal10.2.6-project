@@ -1,8 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
-// # Example 1: Simple "Hello, World" code
-ReactDOM.render(
-  <h1>Hello there - world!</h1>,
-  document.getElementById('react-app')
+// Folosește createRoot pentru a monta aplicația ta React
+const root = createRoot(document.getElementById('react-app'));
+
+// Exemplu simplu: afișează un mesaj "Hello, World"
+root.render(
+  <h1>Hello there - world!</h1>
 );

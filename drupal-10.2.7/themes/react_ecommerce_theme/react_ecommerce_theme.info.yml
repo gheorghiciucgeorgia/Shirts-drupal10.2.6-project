@@ -4,4 +4,4 @@ description: 'A theme that loads Reac JavaScript libraries, and a basic React ap
 core_version_requirement: ^9.5 || ^10
 base theme: olivero
 libraries:
-  - react_example_theme/react_app
+  - react_ecommerce_theme/react_app
