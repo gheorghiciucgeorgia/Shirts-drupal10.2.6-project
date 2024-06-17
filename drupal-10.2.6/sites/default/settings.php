@@ -710,6 +710,7 @@ $settings['update_free_access'] = FALSE;
  */
 # $config['system.site']['name'] = 'My Drupal site';
 # $config['user.settings']['anonymous'] = 'Visitor';
+
 /**
  * Load services definition file.
  */
@@ -877,9 +878,6 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  * Keep this code block at the end of this file to take full effect.
  */
 #
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
 $databases['default']['default'] = array (
   'database' => 'Shirts',
   'username' => 'root',
@@ -893,3 +891,7 @@ $databases['default']['default'] = array (
   'autoload' => 'core/modules/mysql\\src\\Driver\\Database\\mysql\\',
 );
 $settings['config_sync_directory'] = 'sites/default/files/config_XxLyFtpP0qQVDXJl-TE5Rs1FyAkU3UqdyqDZ2sDeyX5Pr_tE71iot_aucJZPOMfiG7T6YJ_uag/sync';
+
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}
