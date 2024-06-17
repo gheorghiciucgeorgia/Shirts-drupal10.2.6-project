@@ -1,5 +1,0 @@
-name: React Ecommerce Shirts Theme
-type: theme
-description: 'A theme that loads React JavaScript libraries, and a basic React application.'
-core_version_requirement: ^9.5 || ^10
-base theme: olivero
