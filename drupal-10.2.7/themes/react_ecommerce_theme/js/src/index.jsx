@@ -26,10 +26,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 /* Import Components */
-import NodeListOnly from "./components/NodeListOnly";
+//import NodeListOnly from "./components/NodeListOnly";
+import NodeReadWrite from "./components/NodeReadWrite";
 
 const Main = () => (
-  <NodeListOnly />
+  <NodeReadWrite />
 );
 
 // Get the container for your app.
