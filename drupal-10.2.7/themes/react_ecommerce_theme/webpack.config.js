@@ -1,5 +1,7 @@
 const path = require('path');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const isDevMode = process.env.NODE_ENV !== 'production';
 
 const PROXY = 'https://react-tutorials-2.ddev.site/';
@@ -8,7 +10,8 @@ const PUBLIC_PATH = '/themes/react_ecommerce_theme/js/dist_dev/';
 const config = {
     entry: {
         main: [
-            "./js/src/index.jsx"
+            "./js/src/index.jsx",
+            "./scss/style.scss"
         ]
     },
     devtool: (isDevMode) ? 'source-map' : false,
@@ -29,19 +32,27 @@ const config = {
                 exclude: /node_modules/,
                 include: path.join(__dirname, 'js/src'),
                 options: {
-                    // This is a feature of `babel-loader` for webpack (not Babel itself).
-                    // It enables caching results in ./node_modules/.cache/babel-loader/
-                    // directory for faster rebuilds.
                     cacheDirectory: true,
                     plugins: [
                         isDevMode && require.resolve('react-refresh/babel')
                     ].filter(Boolean),
                 },
-            }
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ],
+            },
         ],
     },
     plugins: [
         isDevMode && new ReactRefreshWebpackPlugin(),
+        !isDevMode && new MiniCssExtractPlugin({
+            filename: '../../css/style.min.css',
+        }),
     ].filter(Boolean),
     devServer: {
         port: 8181,
@@ -50,7 +61,6 @@ const config = {
         devMiddleware: {
             writeToDisk: true,
         },
-        // Settings for http-proxy-middleware.
         proxy: [
             {
                 index: '',
@@ -58,9 +68,6 @@ const config = {
                 target: PROXY,
                 publicPath: PUBLIC_PATH,
                 secure: false,
-                // These settings allow Drupal authentication to work, so you can sign
-                // in to your Drupal site via the proxy. They require some corresponding
-                // configuration in Drupal's settings.php.
                 changeOrigin: true,
                 xfwd: true
             }

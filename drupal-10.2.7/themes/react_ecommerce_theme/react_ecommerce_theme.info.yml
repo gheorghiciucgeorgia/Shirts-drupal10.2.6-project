@@ -5,3 +5,4 @@ core_version_requirement: ^9.5 || ^10
 base theme: olivero
 libraries:
   - react_ecommerce_theme/react_app
+  - react_ecommerce_theme/react_app_dev
