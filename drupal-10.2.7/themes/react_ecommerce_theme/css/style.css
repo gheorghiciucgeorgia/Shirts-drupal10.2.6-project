@@ -6,25 +6,25 @@
   width: 100%;
   background: transparent;
 }
-#header #site-header__inner .container #block-react-ecommerce-theme-sitebranding-2 {
+#header #site-header__inner .container #block-react-ecommerce-theme-site-branding {
   background: transparent;
 }
 #header .site-header__inner__container {
   background-color: #E4DCCF;
 }
-#header .site-header__inner__container #block-react-ecommerce-theme-navigation {
+#header .site-header__inner__container #block-react-ecommerce-theme-main-menu {
   display: flex;
   align-items: end;
 }
-#header .site-header__inner__container #block-react-ecommerce-theme-navigation .menu {
+#header .site-header__inner__container #block-react-ecommerce-theme-main-menu .menu {
   display: flex;
   flex-direction: row;
   list-style-type: none;
 }
-#header .site-header__inner__container #block-react-ecommerce-theme-navigation .menu li {
+#header .site-header__inner__container #block-react-ecommerce-theme-main-menu .menu li {
   margin-right: 20px;
 }
-#header .site-header__inner__container #block-react-ecommerce-theme-navigation .menu li a {
+#header .site-header__inner__container #block-react-ecommerce-theme-main-menu .menu li a {
   text-decoration: none;
   color: #093f47;
   font-weight: bold;
